@@ -1,6 +1,9 @@
+<script setup lang="ts">
+import InOutHours from './components/InOutHours.vue';
+</script>
+
 <template>
   <div>
-    <h1 class="text-red-500">askdlfjaklösdjhfasdf</h1>    
+    <InOutHours />
   </div>
 </template>
-
