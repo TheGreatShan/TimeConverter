@@ -2,7 +2,7 @@
     <div>
         <h1>Hello</h1>
         <label>InOut hours</label>
-        <input type="number" v-on:change="decimalHours(event)=" placeholder="Type hours" className="input w-full max-w-xs dark:bg-white dark:text-black" />
+        <input v-model="hours" v-on:input="decimalHours" type="number" placeholder="Type hours" className="input w-full max-w-xs dark:bg-white dark:text-black" />
 
         <h1>{{hours}}</h1>
     </div>
@@ -18,7 +18,7 @@
         }, 
         methods: {
             decimalHours(event : any): void {                
-                this.hours = event.target.value;
+                console.log(event.target.value);
             }
         }
     }
