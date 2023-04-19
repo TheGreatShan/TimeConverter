@@ -20,11 +20,13 @@ export default {
 <template>
     <div>
         <MurasHeader title="Calculate to decimal hours" />
-        <label>InOut hours</label>
-        <input v-model="hours" v-on:input="decimalHours" type="text" placeholder="Type hours"
-            className="input w-full max-w-xs dark:bg-white dark:text-black" />
-
-        <h1>{{ decimal }}</h1>
+        <div class="flex items-center justify-center">
+            <div>
+                <input v-model="hours" v-on:input="decimalHours" type="text" placeholder="hh:mm"
+                    class="input w-full max-w-xs dark:bg-white dark:text-black" />
+                <h1 class="font-bold text-xl">Your worked hours: {{ decimal }}</h1>
+            </div>
+        </div>
     </div>
 </template>
 
