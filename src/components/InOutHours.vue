@@ -1,22 +1,12 @@
-import { CalculateDecimal } from '../lib/CalculateDecimal';
-<template>
-    <div>
-        <label>InOut hours</label>
-        <input v-model="hours" v-on:input="decimalHours" type="text" placeholder="Type hours"
-            className="input w-full max-w-xs dark:bg-white dark:text-black" />
-
-        <h1>{{ decimal }}</h1>
-    </div>
-</template>
-
-
 <script lang="ts">
 import { CalculateDecimal } from '../lib/CalculateDecimal';
+import MurasHeader from "./Header.vue"
+
 export default {
     data() {
         return {
             hours: "",
-            decimal: 0
+            decimal: 0,
         }
     },
     methods: {
@@ -26,3 +16,15 @@ export default {
     }
 }
 </script>
+
+<template>
+    <div>
+        <MurasHeader title="Calculate to decimal hours" />
+        <label>InOut hours</label>
+        <input v-model="hours" v-on:input="decimalHours" type="text" placeholder="Type hours"
+            className="input w-full max-w-xs dark:bg-white dark:text-black" />
+
+        <h1>{{ decimal }}</h1>
+    </div>
+</template>
+
