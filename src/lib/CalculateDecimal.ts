@@ -1,18 +1,30 @@
+interface HoursInterface {
+    hours: string[];
+    valid: boolean;
+}
+
 export function CalculateDecimal(hours: string): number {
-    const splittedHours: string[] = SplitHours(hours)
-    const minutes: number = parseFloat(splittedHours[1]) / 60
-    const hour: number = parseFloat(splittedHours[0])
+    const splittedHours: HoursInterface = InputValidator(hours)
+    
+    if (!splittedHours.valid) {return 0}
+
+    const minutes: number = parseFloat(splittedHours.hours[1]) / 60
+    const hour: number = parseFloat(splittedHours.hours[0])
     const roundedHours = RoundHours(hour + minutes)
-    return roundedHours 
+    return roundedHours
 }
 
 
-function SplitHours(hours: string): string[] {
-    const splitted = hours.split(":")
-
-    return splitted
-}
-
-function RoundHours(decimal: number): number {        
+function RoundHours(decimal: number): number {
     return parseFloat(decimal.toFixed(2))
+}
+
+function InputValidator(hours: string): HoursInterface {
+    if (hours.includes(":") && hours.includes(".")) {
+        return { hours: ["", ""], valid: false }
+    } else if (hours.includes(":") && !hours.includes(".")) {
+        return { hours: hours.split(":"), valid: true }
+    }
+
+    return { hours: ["", ""], valid: false }
 }
