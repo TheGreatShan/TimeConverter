@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
-import AppVue from "../App.vue";
-import BananaView from "../BananaView.vue";
+import BananaView from "../view/BananaView.vue";
 import InOutHoursVue from "../components/InOutHours.vue";
 
 interface RoutesInterface {
