@@ -23,7 +23,7 @@ export default {
         <div class="flex items-center justify-center">
             <div>
                 <input v-model="hours" v-on:input="decimalHours" type="text" placeholder="hh:mm"
-                    class="input w-full max-w-xs dark:bg-white dark:text-black" />
+                    class="input w-[50rem] dark:bg-white dark:text-black" />
                 <h1 class="font-bold text-xl">Your worked hours: {{ decimal }}</h1>
             </div>
         </div>
